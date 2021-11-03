@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  testcafe:
+    build: ./
+    image: automaticbarnacle:latest
+    command: 'firefox:headless ./src/fixtures/*.ts'
+    volumes:
+      - ./.testcaferc.json:/app/.testcaferc.json
+      - ./src:/app/src
+    environment:
+      MQTT_URL: ${MQTT_URL}
+      ORIGIN_ENERGY_USERNAME: ${ORIGIN_ENERGY_USERNAME}
+      ORIGIN_ENERGY_PASSWORD: ${ORIGIN_ENERGY_PASSWORD}
+      AUSSIE_BB_USERNAME: ${AUSSIE_BB_USERNAME}
+      AUSSIE_BB_PASSWORD: ${AUSSIE_BB_PASSWORD}
+      SOUTH_EAST_WATER_USERNAME: ${SOUTH_EAST_WATER_USERNAME}
+      SOUTH_EAST_WATER_PASSWORD: ${SOUTH_EAST_WATER_PASSWORD}

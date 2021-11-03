@@ -1,0 +1,23 @@
+{
+  "name": "automatic-barnacle",
+  "version": "0.1.0",
+  "scripts": {
+    "tests:chrome": "testcafe chrome ./src/fixtures/*.ts"
+  },
+  "main": "index.js",
+  "repository": "git@github.com:DanielMajoinen/automatic-barnacle.git",
+  "author": "daniel <daniel@majoinen.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "async-mqtt": "^2.6.1",
+    "dotenv": "^10.0.0",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "eslint": "^8.1.0",
+    "testcafe": "^1.16.1",
+    "typescript": "^4.4.4"
+  }
+}
