@@ -27,6 +27,13 @@ export const southEastWater = Role(`https://my.southeastwater.com.au/s/login/`, 
     .wait(10000)
 })
 
+export const woolworths = Role(`https://www.woolworths.com.au/shop/securelogin`, async t => {
+  await t
+    .typeText('#loginForm-Email', process.env.WOOLWORTHS_USERNAME)
+    .typeText('#loginForm-Password', process.env.WOOLWORTHS_PASSWORD)
+    .click('button[type="submit"]')
+})
+
 const pressKeys = (keys: string): string => {
   return keys.split('').join(' ')
 }
