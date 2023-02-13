@@ -1,7 +1,7 @@
 import { connect } from 'async-mqtt'
 
 export const publish = async (topic: string, body: string): Promise<void> => {
-  const client = connect(process.env.MQTT_URL)
+  const client = connect(process.env.MQTT_URL,{username: process.env.MQTT_USERNAME,password: process.env.MQTT_PASSWORD})
   await client.publish(`automatic-barnacle/${topic}`, body, {
       qos: 0,
       retain: true
